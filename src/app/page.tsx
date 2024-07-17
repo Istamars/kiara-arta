@@ -169,27 +169,7 @@ export default function Home() {
           });
 
           if ((ticketCount + 1) % 7 === 0 && (ticketCount + 1) % 14 !== 0) {
-            page.drawRectangle({
-              x:
-                marginLeft +
-                (pageWidth - marginLeft - marginRight - ticketWidth) / 2,
-              y: yPosition - (ticketHeight + ticketGap + 4),
-              width: 20,
-              height: 10,
-              color: rgb(0, 0, 0),
-              borderWidth: 0,
-            });
-
-            page.drawRectangle({
-              x: pageWidth - (marginRight + marginLeft) * 0.75,
-              y: yPosition - (ticketHeight + ticketGap + 4),
-              width: 20,
-              height: 10,
-              color: rgb(0, 0, 0),
-              borderWidth: 0,
-            });
-
-            yPosition -= ticketHeight + (13 / 4 * ticketGap) + offset + 8;
+            yPosition -= ticketHeight + 0.85 * 28.35;
           } else {
             yPosition -= ticketHeight + ticketGap;
           }
@@ -260,7 +240,7 @@ export default function Home() {
         {/* card tiket */}
         <div
           ref={ticketRef}
-          className={`w-[24cm] min-w-[24cm] h-[2.3cm] min-h-[2.3cm] max-w-[24cm] max-h-[2.3cm] m-0 p-0 flex flex-row items-center justify-between overflow-hidden -z-10 absolute`}
+          className={`w-[23.4cm] min-w-[23.4cm] h-[2.3cm] min-h-[2.3cm] max-w-[23.4cm] max-h-[2.3cm] m-0 p-0 flex flex-row items-center justify-between overflow-hidden -z-10 absolute`}
           style={{ color: "#000000" }}
         >
           <div className="w-[25%] flex flex-row items-center justify-center align-middle content-center text-center overflow-hidden p-0 m-0">
@@ -274,9 +254,8 @@ export default function Home() {
             )}
           </div>
           <div className="flex w-[50%] flex-row gap-4 items-center justify-end">
-            <h3 className="-rotate-90 w-[2cm] whitespace-normal text-center font-semibold"></h3>
             {codeType === "QR" && (
-              <div className="flex flex-col items-center text-center justify-center mr-16">
+              <div className="flex self-start mr-16 mt-[2mm]">
                 <h5 className="font-medium font-roboto-mono">{image}</h5>
               </div>
             )}
