@@ -189,7 +189,7 @@ export default function Home() {
               borderWidth: 0,
             });
 
-            yPosition -= ticketHeight + 3 * ticketGap + offset + 8;
+            yPosition -= ticketHeight + (13 / 4 * ticketGap) + offset + 8;
           } else {
             yPosition -= ticketHeight + ticketGap;
           }
