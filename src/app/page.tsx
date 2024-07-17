@@ -47,13 +47,13 @@ export default function Home() {
       setLoading(true);
       const pdfDoc = await PDFDocument.create();
 
-      const pageWidth = 26.5 * 28.35;
+      const pageWidth = 24.8 * 28.35;
       const pageHeight = 39.4 * 28.35;
 
       const marginLeft = 1 * 28.35;
       const marginRight = 1 * 28.35;
       const marginTop = 1 * 28.35;
-      const ticketGap = 0.4 * 28.35;
+      const ticketGap = 0.37 * 28.35;
 
       let page = pdfDoc.addPage([pageWidth, pageHeight]);
       let yPosition = pageHeight - marginTop;
@@ -157,7 +157,7 @@ export default function Home() {
           }
 
           const ticketWidth = (27 - 2) * 28.35;
-          const ticketHeight = 2.2 * 28.35;
+          const ticketHeight = 2.3 * 28.35;
 
           page.drawImage(pdfImage, {
             x:
@@ -277,7 +277,7 @@ export default function Home() {
             <h3 className="-rotate-90 w-[2cm] whitespace-normal text-center font-semibold"></h3>
             {codeType === "QR" && (
               <div className="flex flex-col items-center text-center justify-center mr-16">
-                <h5 className="font-medium">{image}</h5>
+                <h5 className="font-medium font-roboto-mono">{image}</h5>
               </div>
             )}
             {codeType !== "QR" && (
