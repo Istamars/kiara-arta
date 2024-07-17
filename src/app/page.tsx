@@ -291,7 +291,7 @@ export default function Home() {
               />
             )}
             {codeType === "QR" && (
-              <QRCode className="w-[2cm] h-[2cm]" value={image} />
+              <QRCode className="w-[1.8cm] h-[1.8cm]" value={image} />
             )}
           </div>
           <div className="absolute top-0 left-0 w-[10px] h-[1px] bg-black"></div>
