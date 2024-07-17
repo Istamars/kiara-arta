@@ -105,9 +105,6 @@ export default function Home() {
         }
       }
 
-      tickets.sort((a, b) => parseInt(a.number) - parseInt(b.number));
-
-      console.log("tickets", tickets);
       const groupedTickets: { [key: string]: Ticket[] } = tickets.reduce(
         (acc: { [key: string]: Ticket[] }, ticket) => {
           const color = ticket.color;
@@ -130,8 +127,6 @@ export default function Home() {
         }
       }
       const mixedTickets = result;
-
-      console.log("midexTieckets", mixedTickets, groupedTickets);
 
       const offset = -15; // Sesuaikan nilai offset sesuai kebutuhan Anda
 
