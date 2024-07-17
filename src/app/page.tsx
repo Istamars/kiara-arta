@@ -47,13 +47,13 @@ export default function Home() {
       setLoading(true);
       const pdfDoc = await PDFDocument.create();
 
-      const pageWidth = 24.8 * 28.35;
+      const pageWidth = 26.5 * 28.35;
       const pageHeight = 39.4 * 28.35;
 
       const marginLeft = 1 * 28.35;
       const marginRight = 1 * 28.35;
       const marginTop = 1 * 28.35;
-      const ticketGap = 0.37 * 28.35;
+      const ticketGap = 0.4 * 28.35;
 
       let page = pdfDoc.addPage([pageWidth, pageHeight]);
       let yPosition = pageHeight - marginTop;
@@ -156,7 +156,7 @@ export default function Home() {
             drawText(page, currentPageFormat, centerX, pageHeight);
           }
 
-          const ticketWidth = (27 - 2) * 28.35;
+          const ticketWidth = (23.4) * 28.35;
           const ticketHeight = 2.3 * 28.35;
 
           page.drawImage(pdfImage, {
