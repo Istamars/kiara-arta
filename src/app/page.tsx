@@ -169,7 +169,7 @@ export default function Home() {
           });
 
           if ((ticketCount + 1) % 7 === 0 && (ticketCount + 1) % 14 !== 0) {
-            yPosition -= ticketHeight + 12 * 28.35;
+            yPosition -= ticketHeight + 1.25 * 28.35;
           } else {
             yPosition -= ticketHeight + ticketGap;
           }
@@ -240,7 +240,7 @@ export default function Home() {
         {/* card tiket */}
         <div
           ref={ticketRef}
-          className="absolute overflow-hidden w-[24cm] min-w-[24cm] h-[2.3cm] min-h-[2.3cm] max-w-[24cm] max-h-[2.3cm] m-0 p-0 overflow-hidden"
+          className="absolute overflow-hidden w-[24.6cm] min-w-[24.6cm] h-[2.3cm] min-h-[2.3cm] max-w-[24.6cm] max-h-[2.3cm] m-0 p-0 overflow-hidden"
           style={{ color: "#000000" }}
         >
           <div className={`w-[24cm] min-w-[24cm] h-[2.3cm] min-h-[2.3cm] max-w-[24cm] max-h-[2.3cm] m-0 p-0 flex flex-row items-center justify-between -z-10 absolute left-2.5 pr-[4mm]`}>
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
             <div className="flex w-[50%] flex-row gap-4 items-center justify-end">
               {codeType === "QR" && (
-                <div className="flex self-start mr-[1.7mm] mt-[2mm]">
+                <div className="flex self-start mr-[18mm] mt-0">
                   <h5 className="font-medium font-roboto-mono">{image}</h5>
                 </div>
               )}
