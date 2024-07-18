@@ -53,7 +53,7 @@ export default function Home() {
       const marginLeft = 1 * 28.35;
       const marginRight = 1 * 28.35;
       const marginTop = 1 * 28.35;
-      const ticketGap = 0.39 * 28.35;
+      const ticketGap = 0.375 * 28.35;
 
       let page = pdfDoc.addPage([pageWidth, pageHeight]);
       let yPosition = pageHeight - marginTop;
@@ -156,8 +156,8 @@ export default function Home() {
             drawText(page, currentPageFormat, centerX, pageHeight);
           }
 
-          const ticketWidth = (23.4) * 28.35;
-          const ticketHeight = 2.31 * 28.35;
+          const ticketWidth = (23.9) * 28.35;
+          const ticketHeight = 2.325 * 28.35;
 
           page.drawImage(pdfImage, {
             x:
@@ -169,7 +169,7 @@ export default function Home() {
           });
 
           if ((ticketCount + 1) % 7 === 0 && (ticketCount + 1) % 14 !== 0) {
-            yPosition -= ticketHeight + 1.25 * 28.35;
+            yPosition -= ticketHeight + 1.22 * 28.35;
           } else {
             yPosition -= ticketHeight + ticketGap;
           }
@@ -256,7 +256,7 @@ export default function Home() {
             </div>
             <div className="flex w-[50%] flex-row gap-4 items-center justify-end">
               {codeType === "QR" && (
-                <div className="flex self-start mr-[18mm] mt-0">
+                <div className="flex self-start mr-[17mm] mt-[1mm]">
                   <h5 className="font-medium font-roboto-mono">{image}</h5>
                 </div>
               )}
