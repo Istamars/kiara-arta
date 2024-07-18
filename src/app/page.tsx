@@ -47,13 +47,13 @@ export default function Home() {
       setLoading(true);
       const pdfDoc = await PDFDocument.create();
 
-      const pageWidth = 26.5 * 28.35;
+      const pageWidth = 28.9 * 28.35;
       const pageHeight = 39.4 * 28.35;
 
       const marginLeft = 1 * 28.35;
       const marginRight = 1 * 28.35;
       const marginTop = 1 * 28.35;
-      const ticketGap = 0.4 * 28.35;
+      const ticketGap = 0.39 * 28.35;
 
       let page = pdfDoc.addPage([pageWidth, pageHeight]);
       let yPosition = pageHeight - marginTop;
@@ -157,7 +157,7 @@ export default function Home() {
           }
 
           const ticketWidth = (23.4) * 28.35;
-          const ticketHeight = 2.3 * 28.35;
+          const ticketHeight = 2.31 * 28.35;
 
           page.drawImage(pdfImage, {
             x:
@@ -169,7 +169,7 @@ export default function Home() {
           });
 
           if ((ticketCount + 1) % 7 === 0 && (ticketCount + 1) % 14 !== 0) {
-            yPosition -= ticketHeight + 0.85 * 28.35;
+            yPosition -= ticketHeight + 12 * 28.35;
           } else {
             yPosition -= ticketHeight + ticketGap;
           }
@@ -240,43 +240,45 @@ export default function Home() {
         {/* card tiket */}
         <div
           ref={ticketRef}
-          className={`w-[23.4cm] min-w-[23.4cm] h-[2.3cm] min-h-[2.3cm] max-w-[23.4cm] max-h-[2.3cm] m-0 p-0 flex flex-row items-center justify-between overflow-hidden -z-10 absolute`}
+          className="absolute overflow-hidden w-[24cm] min-w-[24cm] h-[2.3cm] min-h-[2.3cm] max-w-[24cm] max-h-[2.3cm] m-0 p-0 overflow-hidden"
           style={{ color: "#000000" }}
         >
-          <div className="w-[25%] flex flex-row items-center justify-center align-middle content-center text-center overflow-hidden p-0 m-0">
-            {codeType !== "QR" && (
-              <p
-                className="text-center whitespace-nowrap w-full mb-3 text-xs -ml-16 "
-                style={{ color: "#000000" }}
-              >
-                {image}
-              </p>
-            )}
+          <div className={`w-[24cm] min-w-[24cm] h-[2.3cm] min-h-[2.3cm] max-w-[24cm] max-h-[2.3cm] m-0 p-0 flex flex-row items-center justify-between -z-10 absolute left-2.5 pr-[4mm]`}>
+            <div className="w-[25%] flex flex-row items-center justify-center align-middle content-center text-center overflow-hidden p-0 m-0">
+              {codeType !== "QR" && (
+                <p
+                  className="text-center whitespace-nowrap w-full mb-3 text-xs -ml-16 "
+                  style={{ color: "#000000" }}
+                >
+                  {image}
+                </p>
+              )}
+            </div>
+            <div className="flex w-[50%] flex-row gap-4 items-center justify-end">
+              {codeType === "QR" && (
+                <div className="flex self-start mr-[1.7mm] mt-[2mm]">
+                  <h5 className="font-medium font-roboto-mono">{image}</h5>
+                </div>
+              )}
+              {codeType !== "QR" && (
+                <Barcode
+                  value={image}
+                  height={40}
+                  width={1.1}
+                  fontSize={10}
+                  background="none"
+                  marginLeft={110}
+                />
+              )}
+              {codeType === "QR" && (
+                <QRCode className="w-[1.7cm] h-[1.7cm]" value={image} />
+              )}
+            </div>
           </div>
-          <div className="flex w-[50%] flex-row gap-4 items-center justify-end">
-            {codeType === "QR" && (
-              <div className="flex self-start mr-16 mt-[2mm]">
-                <h5 className="font-medium font-roboto-mono">{image}</h5>
-              </div>
-            )}
-            {codeType !== "QR" && (
-              <Barcode
-                value={image}
-                height={40}
-                width={1.1}
-                fontSize={10}
-                background="none"
-                marginLeft={110}
-              />
-            )}
-            {codeType === "QR" && (
-              <QRCode className="w-[1.7cm] h-[1.7cm]" value={image} />
-            )}
-          </div>
-          <div className="absolute top-0 left-0 w-[10px] h-[1px] bg-black"></div>
-          <div className="absolute top-0 right-0 w-[10px] h-[1px] bg-black"></div>
-          <div className="absolute bottom-0 left-0 w-[10px] h-[1px] bg-black"></div>
-          <div className="absolute bottom-0 right-0 w-[10px] h-[1px] bg-black"></div>
+          <div className="absolute top-0 left-0 w-[0.3cm] h-[1px] bg-black"></div>
+          <div className="absolute top-0 right-0 w-[0.3cm] h-[1px] bg-black"></div>
+          <div className="absolute bottom-0 left-0 w-[0.3cm] h-[1px] bg-black"></div>
+          <div className="absolute bottom-0 right-0 w-[0.3cm] h-[1px] bg-black"></div>
         </div>
 
         <div className="flex flex-row justify-start w-full">
